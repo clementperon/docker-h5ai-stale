@@ -1,10 +1,10 @@
 #!/usr/bin/with-contenv bash
 
 # fetch site
-if [[ ! -e /config/www/h5ai/_h5ai/.htaccess ]]; then
-mkdir -p /config/www/h5ai
+if [[ ! -e /config/www/_h5ai/.htaccess ]]; then
+mkdir -p /config/www/
 curl -o /tmp/h5ai.zip -L "https://release.larsjung.de/h5ai/h5ai-${H5AI_VER}.zip"
-unzip /tmp/h5ai.zip -d /config/www/h5ai/
+unzip /tmp/h5ai.zip -d /config/www/
 rm /tmp/h5ai.zip
 fi
 

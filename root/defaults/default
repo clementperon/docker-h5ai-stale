@@ -1,7 +1,7 @@
 server {
 	listen 80 default_server;
 	root /config/www;
-	index index.html index.htm index.php /h5ai/_h5ai/public/index.php;
+	index index.html index.htm index.php /_h5ai/public/index.php;
 
 	server_name _;
 	client_max_body_size 0;
