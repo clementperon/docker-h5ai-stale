@@ -13,7 +13,11 @@ ENV H5AI_VER="0.29.2"
 RUN \
  apk add --no-cache \
 	curl \
-	unzip
+	dropbear-convert \
+	ffmpeg \
+	php7-exif \
+	unzip \
+	zip 
 
 # add local files
 COPY root/ /
