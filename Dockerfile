@@ -1,5 +1,5 @@
-FROM lsiobase/alpine.nginx:3.5
-MAINTAINER chbmb
+FROM lsiobase/nginx:3.12
+MAINTAINER peron.clem@gmail.com
 
 # set version label
 ARG BUILD_DATE
@@ -7,7 +7,7 @@ ARG VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 
 # package version
-ENV H5AI_VER="0.29.0"
+ENV H5AI_VER="0.29.2"
 
 # install packages
 RUN \
