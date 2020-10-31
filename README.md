@@ -1,15 +1,52 @@
-[linuxserverurl]: https://linuxserver.io
-[forumurl]: https://forum.linuxserver.io
-[ircurl]: https://www.linuxserver.io/irc/
-[podcasturl]: https://www.linuxserver.io/podcast/
+Fork form Linux Server h5ai docker
 
-[![linuxserver.io](https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/linuxserver_medium.png)][linuxserverurl]
+## Usage
 
-## This is a Container in active development by the [LinuxServer.io][linuxserverurl] team and is not recommended for use by the general public.
+Here are some example snippets to help you get started creating a container.
 
-If you want to comment\contribute on this container , are looking for support on any of our other work , or are curious about us in general, check out the following.
+### docker-compose ([recommended](https://docs.linuxserver.io/general/docker-compose))
 
-* [forum.linuxserver.io][forumurl]
-* [IRC][ircurl] on freenode at `#linuxserver.io`
-* [Podcast][podcasturl] covers everything to do with getting the most from your Linux Server plus a focus on all things Docker and containerisation!
+Compatible with docker-compose v2 schemas.
 
+```yaml
+---
+version: "2.1"
+services:
+  h5ai:
+    image: clementperon/h5ai
+    container_name: h5ai
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Paris
+    volumes:
+      - /path/to/appdata/config:/config
+      - /path/to/data/www:/config/www
+    restart: unless-stopped
+```
+
+### docker cli
+
+```
+docker run -d \
+  --name=h5ai \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e TZ=Europe/London \
+  -v /path/to/appdata/config:/config \
+  -v /path/to/data/www:/config/www \
+  clementperon/h5ai
+```
+
+
+## Parameters
+
+Container images are configured using parameters passed at runtime (such as those above). These parameters are separated by a colon and indicate `<external>:<internal>` respectively. For example, `-p 8080:80` would expose port `80` from inside the container to be accessible from the host's IP on port `8080` outside the container.
+
+| Parameter | Function |
+| :----: | --- |
+| `-e PUID=1000` | for UserID - see below for explanation |
+| `-e PGID=1000` | for GroupID - see below for explanation |
+| `-e TZ=Europe/London` | Specify a timezone to use EG Europe/London |
+| `-v /config` | Contains all relevant configuration files. |
+| `-v /config/www` | www data that h5ai will display. |
