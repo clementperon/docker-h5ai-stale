@@ -1,6 +1,6 @@
 server {
 	listen 80 default_server;
-	root /config/www;
+	root /var/www;
 	index index.html index.htm index.php /_h5ai/public/index.php;
 
 	server_name _;

@@ -49,4 +49,4 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-e PGID=1000` | for GroupID - see below for explanation |
 | `-e TZ=Europe/London` | Specify a timezone to use EG Europe/London |
 | `-v /config` | Contains all relevant configuration files. |
-| `-v /config/www` | www data that h5ai will display. |
+| `-v /var/www` | www data that h5ai will display. |

@@ -25,3 +25,4 @@ COPY root/ /
 # ports and volumes
 EXPOSE 80
 VOLUME /config
+VOLUME /var/www
